@@ -377,13 +377,13 @@ body.home .navbar.scrolled .logo-img {
     color: white;
 }
 
-/* İstatistik barı - SABIT KONUMLAMA */
+/* ✅ İSTATİSTİK BARI - SCROLL'DA KAYBOLSUN */
 .hero-stats {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 3;
     background: rgba(10,22,40,0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -450,6 +450,7 @@ body.home .navbar.scrolled .logo-img {
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-top: 71px;
 }
 .page-header::before {
     content: '';
@@ -472,6 +473,8 @@ body.home .navbar.scrolled .logo-img {
     color: white;
     font-size: 3.5rem;
     font-weight: 900;
+    position: relative;
+    z-index: 1;
 }
 .page-header p {
     color: var(--accent-glow);
@@ -479,6 +482,8 @@ body.home .navbar.scrolled .logo-img {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 /* ========== HAKKIMIZDA / YÖNETİM ========== */
@@ -1168,6 +1173,276 @@ body.home .navbar.scrolled .logo-img {
     margin: 4px 0 0;
 }
 
+/* ========== CONTACT PAGE ========== */
+.contact-page {
+    padding: 120px 0 80px;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+.contact-info-card {
+    background: var(--bg-gray);
+    border-radius: 24px;
+    padding: 40px;
+}
+.info-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(10,22,40,0.1);
+}
+.info-item:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.info-item i {
+    font-size: 1.8rem;
+    color: #D97706;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+}
+.info-item h4 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+.info-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+.info-item a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.info-item a:hover {
+    color: #D97706;
+}
+
+/* Sosyal medya bölümü */
+.social-links-section {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(10,22,40,0.1);
+}
+.social-links-section h4 {
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+.social-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+.social-media-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--primary);
+    transition: var(--transition);
+    border: 1px solid rgba(45,139,204,0.2);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.social-media-link:hover {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+.social-media-link i {
+    font-size: 1.1rem;
+}
+
+/* İletişim formu */
+.contact-form-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+}
+.contact-form-card h3 {
+    color: var(--primary);
+    margin-bottom: 28px;
+    font-size: 1.5rem;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group input,
+.form-group textarea {
+    padding: 14px 16px;
+    border: 1px solid rgba(45,139,204,0.2);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-gray);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: rgba(45,139,204,0.05);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Harita */
+.map-wrapper {
+    margin: 80px 0;
+    padding: 0 32px;
+}
+.map-wrapper iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 24px;
+}
+
+/* ========== ÜRÜNLER ========== */
+.products-detailed {
+    padding: 80px 0;
+}
+.products-detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+.product-detailed-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.product-detailed-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+.product-detailed-card:hover .product-detailed-image img {
+    transform: scale(1.08);
+}
+.product-detailed-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+}
+.product-detailed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.product-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #D97706;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.product-detailed-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-detailed-content h3 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+.product-detailed-content > p {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.product-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.product-specs span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+.product-specs i {
+    color: var(--accent-blue);
+}
+.read-more {
+    color: var(--accent-blue);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    transition: gap 0.3s ease;
+}
+.product-detailed-card:hover .read-more {
+    gap: 10px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+}
+.cta-content {
+    text-align: center;
+}
+.cta-content h2 {
+    color: white;
+    margin-bottom: 16px;
+}
+.cta-content p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+}
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1rem;
+}
+
 /* ========== FOOTER ========== */
 .footer {
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
@@ -1233,34 +1508,3 @@ body.home .navbar.scrolled .logo-img {
     border-top: 1px solid rgba(45,139,204,0.2);
 }
 .footer-bottom p { font-size: 0.85rem; }
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1024px) {
-    .services-grid,
-    .management-grid { grid-template-columns: repeat(2, 1fr); }
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
-    .advantages-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-    .container { padding: 0 16px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    .nav-menu { gap: 20px; }
-    .hero-stats-inner { grid-template-columns: 1fr; }
-    .services-grid,
-    .management-grid,
-    .projects-grid,
-    .advantages-grid,
-    .footer-grid { grid-template-columns: 1fr; }
-    .about-grid,
-    .contact-flex { grid-template-columns: 1fr; }
-    .service-block { grid-template-columns: 1fr; }
-    .management-philosophy { grid-template-columns: 1fr; }
-    .mobile-menu-btn { display: block; }
-    .nav-menu { flex-direction: column; display: none; gap: 0; }
-    .nav-menu.active { display: flex; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); z-index: 100; }
-    .hero-stats { padding: 16px 0; }
-    .hero-stat-num { font-size: 1.5rem; }
-}
